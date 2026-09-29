@@ -17,19 +17,22 @@
     --font1: arial;
 }
 
-section {
+#container {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     grid-template-areas: 
-    "box1 box2"
-    "box3 box3"
+    "box-1 box-1 box-2 box-2"
+    "box-1 box-1 box-2 box-2"
+    "box-3 box-3 box-3 box-3"
+    "box-3 box-3 box-3 box-3"
     ;
+    gap: 10px 10px;
 }
 
-div {
+div.box {
     background-color: var(--cor1);
     border-radius: 10px;
-
+    place-items: center center;
 }
 
 h1 {
