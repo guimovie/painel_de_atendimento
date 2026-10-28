@@ -8,39 +8,72 @@
 }
 
 :root {
-    --cor1: #769382;
-    --cor2: #C0C3B9;
-    --cor3: #F3EFE3;
+    --cor1: #e8d1a7;
+    --cor2: #9d9167;
+    --cor3: #89542b;
+    --cor4: #743014;
+    --cor5: #442d1c;
     --white: #ffffff;
     --black: #161616;
 
     --font1: arial;
 }
 
+body {
+    background-color: var(--cor1);
+}
+
+header {
+    background-color: var(--cor4);
+    padding: 10px;
+}
+
 #container {
     display: grid;
-    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    margin: 10px;
+    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
     grid-template-areas: 
-    "box-1 box-1 box-2 box-2"
-    "box-1 box-1 box-2 box-2"
-    "box-3 box-3 box-3 box-3"
-    "box-3 box-3 box-3 box-3"
+    "box-1 box-1 box-2 box-2 box-3 box-3"
+    "box-1 box-1 box-2 box-2 box-3 box-3"
+    "box-4 box-4 box-4 box-4 box-4 box-4"
+    "box-4 box-4 box-4 box-4 box-4 box-4"
     ;
     gap: 10px 10px;
 }
 
-#chamadas {
-    
-}
 
 div.box {
-    background-color: var(--cor1);
-    border-radius: 10px;
-    place-items: center center;
+    display: flex;
+    background-color: var(--cor2);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
+    color: var(--cor1);
     text-align: center;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 23px;
 }
+
+button {
+    height: 50px;
+    width: 200px;
+    color: var(--cor1);
+    font-size: 1.1em;
+    background-color: var(--cor5);
+    border-radius: 25px;
+    border: 1px solid var(--cor4);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--cor3);
+    color: var(--white);
+    border-color: var(--cor5);
+    cursor: pointer;
+}
+

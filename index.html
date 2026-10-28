@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Atendimento</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <main>
         <header>
-            <h1>UBS Dr. Renato</h1>
+            <h1>Bendito Café</h1>
         </header>
         <div id="container">
-            <div class="box" id="chamadas" style="grid-area: box-1;">
-                <h2 id="senha">Senha: 000</h2>
-                <h2 id="nome">Dominic Toreto</h2>
-                <h2 id="sala">Sala 4</h2>
-                <button>Próximo</button>
+            <div class="box" id="chamada" style="grid-area: box-1;">
+                <button id="pedido_btn">Fazer Pedido</button>
             </div>
-            <div class="box" style="grid-area: box-2;">
+            <div class="box" id="video" style="grid-area: box-2;">
                 <h2>video</h2>
             </div>
-            <div class="box" style="grid-area: box-3;">
+            <div class="box" id="preparacao" style="grid-area: box-3;">
+                <h2>preparação</h2>
+            </div>
+            <div class="box" id="historico" style="grid-area: box-4;">
                 <h2>Histórico de chamadas</h2>
                 <div id="historico"></div>
             </div>
