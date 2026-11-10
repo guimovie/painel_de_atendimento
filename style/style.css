@@ -23,7 +23,8 @@ body {
     background-color: var(--cor1);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
 }
 
 header {
@@ -43,14 +44,14 @@ main {
     display: grid;
     min-height: 0;
     margin: 10px;
-    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+    grid-template: repeat(6, minmax(0, 1fr)) / repeat(6, minmax(0, 1fr));
     grid-template-areas: 
-    "box-1 box-1 box-2 box-2 box-3 box-3"
-    "box-1 box-1 box-2 box-2 box-3 box-3"
-    "box-4 box-4 box-2 box-2 box-3 box-3"
-    "box-4 box-4 box-2 box-2 box-3 box-3"
-    "box-4 box-4 box-5 box-5 box-5 box-5"
-    "box-4 box-4 box-5 box-5 box-5 box-5"
+    "box-1 box-1 box-2 box-2 box-5 box-5"
+    "box-1 box-1 box-2 box-2 box-5 box-5"
+    "box-3 box-3 box-2 box-2 box-5 box-5"
+    "box-3 box-3 box-2 box-2 box-5 box-5"
+    "box-3 box-3 box-4 box-4 box-4 box-4"
+    "box-3 box-3 box-4 box-4 box-4 box-4"
     ;
     gap: 10px 10px;
 }
@@ -60,14 +61,22 @@ div.box {
     background-color: var(--cor2);
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 50px;
+    box-shadow: 2px 2px 10px var(--cor2);
     justify-content: center;
     align-items: center;
 }
 
+#chamada {
+    flex-direction: column;
+    box-shadow: none;
+    align-items: baseline;
+    gap: 8px;
+    background-color: var(--cor1);
+}
+
 button {
     height: 50px;
-    width: 200px;
+    width: 100%;
     color: var(--cor1);
     font-size: 1.1em;
     background-color: var(--cor5);
@@ -90,26 +99,73 @@ button:active {
 
 }
 
+#video {
+    width: 24vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
 #preparacao {
+    padding-top: 0%;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    min-width: 0;
+    min-height: 0;
     gap: 8px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Firefox e navegadores compatíveis */
+#preparacao {
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor4) var(--cor1);
+}
+
+/* Chrome, Edge e Safari */
+#preparacao::-webkit-scrollbar {
+    width: 8px;
+}
+
+#preparacao::-webkit-scrollbar-track {
+    background: var(--cor1);
+    border-radius: 8px;
+}
+
+#preparacao::-webkit-scrollbar-thumb {
+    background: var(--cor4);
+    border-radius: 8px;
+}
+
+#preparacao::-webkit-scrollbar-thumb:hover {
+    background: var(--cor5);
 }
 
 #preparacao h2 {
-    margin-bottom: 8px;
+    padding: 10px;
+    margin-bottom: 3px;
+    width: 100%;
+    background-color: var(--cor2);
+    position: sticky;
+    top: 0;
+    flex: 0 0 auto;
 }
 
 .pedido-item {
+    flex: 0 0 auto;
     margin: 0;
     width: 100%;
     line-height: 1.4;
+    background-color: var(--cor4);
+    color: var(--cor1);
+    padding: 5px;
+    border-radius: 5px;
 }
-
-
 
 footer {
     display: flex;
@@ -120,7 +176,7 @@ footer {
     color: var(--cor1);
 }
 
-footer > p > a {
+footer a {
     color: var(--cor1);
     text-decoration: none;
 }
