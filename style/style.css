@@ -21,6 +21,9 @@
 
 body {
     background-color: var(--cor1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -28,19 +31,29 @@ header {
     padding: 10px;
 }
 
-#container {
+h1 {
+    color: var(--cor1);
+    text-align: center;
+    font-weight: lighter;
+    font-size: 23px;
+}
+
+main {
+    flex: 1;
     display: grid;
+    min-height: 0;
     margin: 10px;
-    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
     grid-template-areas: 
     "box-1 box-1 box-2 box-2 box-3 box-3"
     "box-1 box-1 box-2 box-2 box-3 box-3"
-    "box-4 box-4 box-4 box-4 box-4 box-4"
-    "box-4 box-4 box-4 box-4 box-4 box-4"
+    "box-4 box-4 box-2 box-2 box-3 box-3"
+    "box-4 box-4 box-2 box-2 box-3 box-3"
+    "box-4 box-4 box-5 box-5 box-5 box-5"
+    "box-4 box-4 box-5 box-5 box-5 box-5"
     ;
     gap: 10px 10px;
 }
-
 
 div.box {
     display: flex;
@@ -50,13 +63,6 @@ div.box {
     box-shadow: 50px;
     justify-content: center;
     align-items: center;
-}
-
-h1 {
-    color: var(--cor1);
-    text-align: center;
-    font-weight: lighter;
-    font-size: 23px;
 }
 
 button {
@@ -77,3 +83,44 @@ button:hover {
     cursor: pointer;
 }
 
+button:active {
+    background-color: var(--cor4);
+    color: var(--white);
+    border-color: var(--cor5);
+
+}
+
+#preparacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    overflow: auto;
+}
+
+#preparacao h2 {
+    margin-bottom: 8px;
+}
+
+.pedido-item {
+    margin: 0;
+    width: 100%;
+    line-height: 1.4;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: var(--cor4);
+    color: var(--cor1);
+}
+
+footer > p > a {
+    color: var(--cor1);
+    text-decoration: none;
+}
