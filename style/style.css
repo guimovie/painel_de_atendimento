@@ -1,10 +1,30 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'birthstone';
+    src: url(font/Birthstone/Birthstone-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'bigshot';
+    src: url(font/Bigshot_One/BigshotOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'gravitas';
+    src: url(font/Gravitas_One/GravitasOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'jaquard';
+    src: url(font/Jacquard_12/Jacquard12-Regular.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font1);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -16,7 +36,10 @@
     --white: #ffffff;
     --black: #161616;
 
-    --font1: arial;
+    --font1: 'birthstone';
+    --font2: 'bigshot';
+    --font3: 'gravitas';
+    --font4: 'jaquard';
 }
 
 body {
@@ -29,14 +52,15 @@ body {
 
 header {
     background-color: var(--cor4);
-    padding: 10px;
+    padding: 5px;
 }
 
 h1 {
     color: var(--cor1);
     text-align: center;
     font-weight: lighter;
-    font-size: 23px;
+    font-size: 2.5em;
+    font-family: var(--font3);
 }
 
 main {
@@ -62,6 +86,11 @@ div.box {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 2px 2px 10px var(--cor2);
+}
+
+.box h2 {
+    font-family: var(--font2);
+    font-weight: lighter;
 }
 
 #chamada {
@@ -241,4 +270,5 @@ footer {
 footer a {
     color: var(--cor1);
     text-decoration: none;
+    font-weight: bold;
 }
