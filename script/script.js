@@ -3,13 +3,40 @@ const pronto = document.getElementById('pronto-lista');
 const preparacao = document.getElementById('preparacao-lista');
 const pedidoBtn = document.getElementById('pedido-btn');
 const limparBtn = document.getElementById('limpar-btn');
+const videoPlayer = document.getElementById('video-player');
+const videoMensagem = document.getElementById('video-mensagem');
 
 const LIMITE_HISTORICO = 7;
 let cont = 0;
 const pedidos = new Map();
+const videos = [
+    'videos/video1.mp4'
+];
+let videoAtual = 0;
 
 pedidoBtn.addEventListener('click', fazerPedido);
 limparBtn.addEventListener('click', limparPedidos);
+videoPlayer.addEventListener('ended', tocarProximoVideo);
+videoPlayer.addEventListener('error', () => {
+    videoMensagem.textContent = `Não foi possível carregar "${videos[videoAtual]}". Confira se o arquivo existe na pasta videos.`;
+    videoMensagem.hidden = false;
+});
+
+videoPlayer.src = videos[videoAtual];
+videoPlayer.play().catch(() => {
+    videoMensagem.textContent = 'Não foi possível iniciar o vídeo automaticamente.';
+    videoMensagem.hidden = false;
+});
+
+function tocarProximoVideo() {
+    videoAtual = (videoAtual + 1) % videos.length;
+    videoMensagem.hidden = true;
+    videoPlayer.src = videos[videoAtual];
+    videoPlayer.play().catch(() => {
+        videoMensagem.textContent = 'Não foi possível iniciar o vídeo automaticamente.';
+        videoMensagem.hidden = false;
+    });
+}
 
 function fazerPedido() {
     const pedidoId = ++cont;
