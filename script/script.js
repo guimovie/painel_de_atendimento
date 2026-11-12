@@ -4,7 +4,7 @@ const preparacao = document.getElementById('preparacao-lista');
 const pedidoBtn = document.getElementById('pedido-btn');
 const limparBtn = document.getElementById('limpar-btn');
 
-const LIMITE_HISTORICO = 8;
+const LIMITE_HISTORICO = 7;
 let cont = 0;
 const pedidos = new Map();
 
@@ -44,6 +44,9 @@ function limparPedidos() {
     cont = 0
     historico.replaceChildren();
     pronto.replaceChildren();
+    const mensagemPronto = document.createElement('h2');
+    mensagemPronto.textContent = 'Pronto';
+    pronto.appendChild(mensagemPronto);
     preparacao.replaceChildren();
     pedidos.clear();
 }
@@ -53,7 +56,7 @@ function pedidoPronto(id, item) {
 
     if (!pedido || pedido.status !== 'preparando') return;
 
-    const pedidoAtual = pronto.firstElementChild;
+    const pedidoAtual = pronto.querySelector('.pedido-item');
 
     if (pedidoAtual) {
         const idAtual = Number(pedidoAtual.dataset.pedidoId);
@@ -73,6 +76,8 @@ function pedidoPronto(id, item) {
     }
 
     pedido.status = 'pronto';
+    const mensagemPronto = pronto.querySelector('h2');
+    if (mensagemPronto) mensagemPronto.remove();
     pronto.appendChild(item);
 }
 

@@ -147,6 +147,14 @@ button:active {
     flex-direction: column;
     justify-content: flex-start;
     gap: 10px;
+    color: var(--cor1);
+    padding: 0%;
+}
+
+#historico h2 {
+    background-color: var(--cor5);
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 #historico-lista {
@@ -154,6 +162,7 @@ button:active {
     flex-direction: column;
     gap: 5px;
     overflow: hidden;
+    margin: 0px 10px 0px 10px;
 }
 
 #historico .pedido-item {
@@ -170,6 +179,8 @@ button:active {
 #preparacao {
     display: flex;
     flex-direction: column;
+    color: var(--cor1);
+    padding: 0%;
 }
 
 #preparacao-lista {
@@ -180,7 +191,8 @@ button:active {
     align-items: flex-start;
     min-width: 0;
     min-height: 0;
-    gap: 8px;
+    gap: 5px;
+    margin: 0px 10px 0px 10px;
     overflow-y: auto;
     overflow-x: hidden;
     /* Firefox e navegadores compatíveis */
@@ -211,10 +223,16 @@ button:active {
 #preparacao h2 {
     margin-bottom: 5px;
     width: 100%;
-    background-color: var(--cor2);
+    background-color: var(--cor5);
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
     position: sticky;
     top: 0;
     flex: 0 0 auto;
+}
+
+#preparacao .pedido-item {
+    padding: 10px;
 }
 
 .pedido-item {
@@ -244,24 +262,33 @@ button:active {
 }
 
 #pronto {
+    padding: 0px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 #pronto-lista {
-    height: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#pronto-lista h2 {
+    font-size: 2em;
 }
 
 #pronto-lista .pedido-item {
     display: flex;
     justify-content: center;
     background-color: var(--cor5);
-    width: 80%;
-    font-size: large;
+    width: 100%;
+    animation: destaque-pronto 1.2s ease-in-out;
+}
+
+#pronto-lista .pedido-item span {
+    font-family: var(--font2);
+    font-size: 1.7em;
 }
 
 #pronto-lista .pedido-acoes {
@@ -281,4 +308,27 @@ footer a {
     color: var(--cor1);
     text-decoration: none;
     font-weight: bold;
+}
+
+@keyframes destaque-pronto {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(232, 209, 167, 0);
+    }
+
+    25%, 75% {
+        transform: scale(1.05);
+        box-shadow: 0 0 18px 6px rgba(232, 209, 167, 0.8);
+    }
+
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(232, 209, 167, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #pronto-lista .pedido-item {
+        animation: none;
+    }
 }
