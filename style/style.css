@@ -102,15 +102,20 @@ div.box {
 }
 
 button {
-    font-family: var(--font2);
     height: 50px;
     width: 100%;
     color: var(--cor1);
-    font-size: 1.3em;
+    font-size: 1.1em;
     background-color: var(--cor5);
     border-radius: 25px;
     border: 1px solid var(--cor4);
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#chamada button {
+    font-family: var(--font2);
+    font-size: 1.3em;
+
 }
 
 button:hover {
