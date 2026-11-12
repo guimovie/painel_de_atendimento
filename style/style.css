@@ -147,11 +147,14 @@ button:active {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    overflow: hidden;
 }
 
 #historico .pedido-item {
     display: flex;
     justify-content: center;
+    padding: 10px;
+    font-size: 1.4em;
 }
 
 #historico .pedido-acoes {
@@ -209,6 +212,7 @@ button:active {
 }
 
 .pedido-item {
+    font-size: 1.2em;
     display: flex;
     align-items: center;
     flex: 0 0 auto;

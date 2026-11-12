@@ -2,9 +2,14 @@ const historico = document.getElementById('historico-lista');
 const pronto = document.getElementById('pronto-lista');
 const preparacao = document.getElementById('preparacao-lista');
 const pedidoBtn = document.getElementById('pedido-btn');
+const limparBtn = document.getElementById('limpar-btn');
 
+const LIMITE_HISTORICO = 8;
 let cont = 0;
 const pedidos = new Map();
+
+pedidoBtn.addEventListener('click', fazerPedido);
+limparBtn.addEventListener('click', limparPedidos);
 
 function fazerPedido() {
     const pedidoId = ++cont;
@@ -18,7 +23,7 @@ function fazerPedido() {
     botao.addEventListener('click', () => pedidoPronto(pedidoId, item));
     botao.type = 'button';
     botao.textContent = '✓';
-    
+
     const cancelarBtn = document.createElement('button');
     cancelarBtn.addEventListener('click', () => cancelarPedido(pedidoId, item));
     cancelarBtn.type = 'button';
@@ -35,7 +40,13 @@ function fazerPedido() {
     preparacao.appendChild(item);
 }
 
-pedidoBtn.addEventListener('click', fazerPedido);
+function limparPedidos() {
+    cont = 0
+    historico.replaceChildren();
+    pronto.replaceChildren();
+    preparacao.replaceChildren();
+    pedidos.clear();
+}
 
 function pedidoPronto(id, item) {
     const pedido = pedidos.get(id);
@@ -53,8 +64,23 @@ function pedidoPronto(id, item) {
         }
 
         historico.appendChild(pedidoAtual);
+
+        if (historico.children.length > LIMITE_HISTORICO) {
+            const pedidoMaisAntigo = historico.firstElementChild;
+            pedidos.delete(Number(pedidoMaisAntigo.dataset.pedidoId));
+            pedidoMaisAntigo.remove();
+        }
     }
 
     pedido.status = 'pronto';
     pronto.appendChild(item);
+}
+
+function cancelarPedido(id, item) {
+    const pedido = pedidos.get(id);
+
+    if (!pedido || pedido.status !== 'preparando') return;
+
+    item.remove();
+    pedidos.delete(id);
 }
