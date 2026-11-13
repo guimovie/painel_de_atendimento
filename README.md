@@ -1,6 +1,6 @@
 # Painel de Atendimento — Bendito Café
 
-Aplicação web simples para acompanhar os pedidos de uma cafeteria. O painel organiza os pedidos em preparação, destaca o pedido pronto e mantém um histórico das chamadas anteriores.
+Projeto do primeiro semestre do curso de ADS. Aplicação web simples para acompanhar os pedidos de uma cafeteria. O painel organiza os pedidos em preparação, destaca o pedido pronto e mantém um histórico das chamadas anteriores.
 
 **Acesse o projeto:** [guimovie.github.io/painel_de_atendimento](https://guimovie.github.io/painel_de_atendimento/)
 
@@ -33,6 +33,3 @@ Aplicação web simples para acompanhar os pedidos de uma cafeteria. O painel or
 - JavaScript sem dependências
 - API de síntese de voz do navegador para anunciar pedidos prontos
 
-## Executar localmente
-
-Clone o repositório e abra o arquivo `index.html` em um navegador. Não é necessário instalar dependências nem executar um processo de build.
