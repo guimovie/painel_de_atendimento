@@ -106,6 +106,18 @@ function pedidoPronto(id, item) {
     const mensagemPronto = pronto.querySelector('h2');
     if (mensagemPronto) mensagemPronto.remove();
     pronto.appendChild(item);
+    anunciarPedidoPronto(id);
+}
+
+function anunciarPedidoPronto(id) {
+    if (!('speechSynthesis' in window)) {
+        console.error('Este navegador não oferece suporte à leitura de voz.');
+        return;
+    }
+
+    const fala = new SpeechSynthesisUtterance(`Pedido ${id} está pronto`);
+    fala.lang = 'pt-BR';
+    window.speechSynthesis.speak(fala);
 }
 
 function cancelarPedido(id, item) {
