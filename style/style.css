@@ -15,11 +15,6 @@
     src: url(font/Gravitas_One/GravitasOne-Regular.ttf);
 }
 
-@font-face {
-    font-family: 'jaquard';
-    src: url(font/Jacquard_12/Jacquard12-Regular.ttf);
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -36,10 +31,8 @@
     --white: #ffffff;
     --black: #161616;
 
-    --font1: 'birthstone';
-    --font2: 'bigshot';
-    --font3: 'gravitas';
-    --font4: 'jaquard';
+    --font1: 'bigshot';
+    --font2: 'gravitas';
 }
 
 body {
@@ -60,7 +53,7 @@ h1 {
     text-align: center;
     font-weight: lighter;
     font-size: 2.5em;
-    font-family: var(--font3);
+    font-family: var(--font2);
 }
 
 main {
@@ -89,7 +82,7 @@ div.box {
 }
 
 .box h2 {
-    font-family: var(--font2);
+    font-family: var(--font1);
     font-weight: lighter;
 }
 
@@ -113,7 +106,7 @@ button {
 }
 
 #chamada button {
-    font-family: var(--font2);
+    font-family: var(--font1);
     font-size: 1.3em;
 
 }
