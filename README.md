@@ -2,8 +2,6 @@
 
 Projeto do primeiro semestre do curso de ADS. Aplicação web simples para acompanhar os pedidos de uma cafeteria. O painel organiza os pedidos em preparação, destaca o pedido pronto e mantém um histórico das chamadas anteriores.
 
-**Acesse o projeto:** [guimovie.github.io/painel_de_atendimento](https://guimovie.github.io/painel_de_atendimento/)
-
 ## Capturas de tela
 
 ### Painel inicial
